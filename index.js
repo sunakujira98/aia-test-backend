@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const request = require("request");
-const port = 5000;
 
 // index page
 app.get("/api", (req, res) => {
@@ -32,7 +31,5 @@ app.get("/api/search/:tags", (req, res) => {
   req.pipe(request(url)).pipe(res);
 });
 
-// listening to port 3001
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+const port = process.env.PORT || 5000;
+app.listen(port);
