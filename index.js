@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const request = require("request");
 
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
 // index api page
 app.get("/api", (req, res) => {
   // this is my api url, change with yours
