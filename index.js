@@ -2,7 +2,12 @@ const express = require("express");
 const app = express();
 const request = require("request");
 
-// index page
+// index api page
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
+
+// index api page
 app.get("/api", (req, res) => {
   // this is my api url, change with yours
   let url =
