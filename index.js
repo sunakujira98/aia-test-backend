@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const request = require("request");
+const path = require("path");
 
+// Serve static files from the React app
 app.use(express.static(path.join(__dirname, "frontend/build")));
 
 // index api page
